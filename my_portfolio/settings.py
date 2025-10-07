@@ -27,7 +27,8 @@ DEBUG = False
 
 import os
 
-ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["my-portfolio-rueb.onrender.com", "localhost", "127.0.0.1"]
 
 
 # Application definition
