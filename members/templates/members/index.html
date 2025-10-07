@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="{% static 'members/style.css' %}">
+</head>
+
+
+<body>
+
+  <header> 
+    <nav class="navbar">
+      <div class="logo">MyPortfolio</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="{% url "contact" %}">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Hello, I'm <span>krutik</span></h1>
+      <p>A Passionate Web Developer</p>
+      <a href="#projects" class="btn">View My Work</a>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+       Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut reiciendis officia, perferendis aliquam in nemo sint qui blanditiis ad deserunt ratione veritatis, nihil eum quos? Corrupti minus tempore debitis esse.
+    </p>
+  </section>
+
+  <section id="skills" class="skills">
+    <h2>My Skills</h2>
+    <div class="skill-bar">
+      <p>HTML</p>
+      <div class="progress"><span style="width: 90%"></span></div>
+    </div>
+    <div class="skill-bar">
+      <p>CSS</p>
+      <div class="progress"><span style="width: 85%"></span></div>
+    </div>
+    <div class="skill-bar">
+      <p>JavaScript</p>
+      <div class="progress"><span style="width: 75%"></span></div>
+    </div>
+    <div class="skill-bar">
+      <p>Django</p>
+      <div class="progress"><span style="width: 70%"></span></div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>My Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Project 1</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita aliquid neque quam praesentium mollitia architecto quia minus aspernatur perspiciatis, quo velit aperiam! Voluptatibus adipisci ad possimus delectus, quidem earum obcaecati?</p>
+      </div>
+      <div class="project-card">
+        <h3>Project 2</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus esse explicabo excepturi quisquam assumenda molestias harum tempora provident! Quisquam dolorum eligendi cumque aperiam asperiores voluptate natus veritatis? Quibusdam, quo fugiat?</p>
+      </div>
+      <div class="project-card">
+        <h3>Project 3</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa voluptates voluptate accusamus, a voluptas temporibus. Quasi ab, deserunt quam, odio possimus id tenetur, unde veritatis ipsam officia voluptatem sequi at?</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 my portfolio| All Rights Reserved</p>
+  </footer>
+
+  
+
+</body>
+</html>
